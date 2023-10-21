@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
       const newNote = {
           id: uniqid(),
           title: req.body.title,
-          content: req.body.text};
+          text: req.body.text};
       notes.push(newNote);
       fs.writeFileSync(pathToNotes, JSON.stringify(notes));
       res.json(newNote);
