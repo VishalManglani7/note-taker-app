@@ -11,7 +11,7 @@ router.get('/', (req,res) =>{
     try {
         const data = fs.readFileSync(pathToNotes, 'utf8');
         console.log(JSON.parse(data));
-        res.json(data);
+        res.send(data);
       } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Error' });
